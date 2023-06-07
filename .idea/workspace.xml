@@ -1,14 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="6dca7c7e-c71b-4a63-85c7-fe1325eb3a37" name="Changes" comment="" />
+    <list default="true" id="6dca7c7e-c71b-4a63-85c7-fe1325eb3a37" name="Changes" comment="Added basic functionality to select a year and receive the most popular movies of that year">
+      <change afterPath="$PROJECT_DIR$/src/main/java/MediaCuratorUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Movie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MovieCuratorUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MovieHTTPResponseParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MovieRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/TMDbAPIConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TMDbAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TMDbAPI.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2Pf9fdjN20I9LEh2wWdMPRouKER" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -16,12 +40,62 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/geekt/IdeaProjects/MediaCurator&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
   }
-}]]></component>
+}</component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn compile" />
+      <command value="mvn install" />
+      <command value="mvn clean" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="MediaCurator" />
+      <option name="PROGRAM_PARAMETERS" value="eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxOTI0ZTQ1ODc0MmFjZDVhMDBlZDMxNzc5MGEzY2E3OCIsInN1YiI6IjY0NWQ1NjFkNmFhOGUwMDBlNGJlZTY2MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.XR5VlS1rZsV5mrr8miJhZNYlcmPOJUx3pNLenNwX6Ks" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MediaCuratorUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MediaCuratorUI" />
+      <module name="MediaCurator" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TMDbAPI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TMDbAPI" />
+      <module name="MediaCurator" />
+      <option name="PROGRAM_PARAMETERS" value="eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxOTI0ZTQ1ODc0MmFjZDVhMDBlZDMxNzc5MGEzY2E3OCIsInN1YiI6IjY0NWQ1NjFkNmFhOGUwMDBlNGJlZTY2MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.XR5VlS1rZsV5mrr8miJhZNYlcmPOJUx3pNLenNwX6Ks" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.MediaCuratorUI" />
+      <item itemvalue="Application.TMDbAPI" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.MediaCuratorUI" />
+        <item itemvalue="Application.TMDbAPI" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -32,5 +106,20 @@
       <updated>1683837375710</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added basic functionality to select a year and receive the most popular movies of that year" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added basic functionality to select a year and receive the most popular movies of that year" />
   </component>
 </project>
