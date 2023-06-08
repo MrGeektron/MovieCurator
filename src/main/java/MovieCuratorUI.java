@@ -6,17 +6,21 @@ import java.net.URL;
 import java.time.Year;
 import java.util.ArrayList;
 import java.util.Objects;
+import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JRadioButton;
 
 public class MovieCuratorUI extends JFrame implements ActionListener {
 
     TMDbAPI api;
     TMDbAPIConfiguration config;
     ArrayList<Movie> movies;
-    JComboBox <String> comboBox;
+    JComboBox <String> movieReleaseYearDropdown;
+    JRadioButton popularityRadioButton;
+    JRadioButton ratingRadioButton;
     int currentYear;
     JLabel moviePosterLabel1;
     JLabel moviePosterLabel2;
@@ -38,11 +42,20 @@ public class MovieCuratorUI extends JFrame implements ActionListener {
         this.setSize(1000, 750);
         currentYear = Year.now().getValue();
         String[] years = initializeYears(currentYear);
-        comboBox = new JComboBox<> (years);
-        comboBox.setSelectedIndex(comboBox.getItemCount() - 1);
-        comboBox.addActionListener(this);
+        movieReleaseYearDropdown = new JComboBox<> (years);
+        movieReleaseYearDropdown.setSelectedIndex(movieReleaseYearDropdown.getItemCount() - 1);
+        movieReleaseYearDropdown.addActionListener(this);
+        popularityRadioButton = new JRadioButton("Popularity", true);
+        popularityRadioButton.addActionListener(this);
+        ratingRadioButton = new JRadioButton("Rating");
+        ratingRadioButton.addActionListener(this);
         initializeMoviePosters();
-        this.add(comboBox);
+        this.add(movieReleaseYearDropdown);
+        this.add(popularityRadioButton);
+        this.add(ratingRadioButton);
+        ButtonGroup movieSortGroup = new ButtonGroup();
+        movieSortGroup.add(popularityRadioButton);
+        movieSortGroup.add(ratingRadioButton);
         this.setVisible(true);
     }
 
@@ -56,11 +69,34 @@ public class MovieCuratorUI extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == comboBox) {
-            String s = (String) comboBox.getSelectedItem();
-            movies = api.request(new MovieRequest(Integer.parseInt(s)));
-            updateMoviePosters();
+        if(e.getSource() == movieReleaseYearDropdown) {
+            if(popularityRadioButton.isSelected()) {
+                handlePopularRequest();
+            }
+            else if(ratingRadioButton.isSelected()) {
+                handleRatingRequest();
+            }
         }
+        else if(e.getSource() == ratingRadioButton) {
+            handleRatingRequest();
+        }
+        else if(e.getSource() == popularityRadioButton) {
+            handlePopularRequest();
+        }
+    }
+
+    private void handlePopularRequest() {
+        String s = (String) movieReleaseYearDropdown.getSelectedItem();
+        MovieRequest request = new MovieRequest(Integer.parseInt(s));
+        movies = api.request(request.getPopularRequest());
+        updateMoviePosters();
+    }
+
+    private void handleRatingRequest() {
+        String s = (String) movieReleaseYearDropdown.getSelectedItem();
+        MovieRequest request = new MovieRequest(Integer.parseInt(s));
+        movies = api.request(request.getRatingRequest());
+        updateMoviePosters();
     }
 
     private void updateMoviePosters() {
@@ -88,7 +124,8 @@ public class MovieCuratorUI extends JFrame implements ActionListener {
     }
 
     private void initializeMoviePosters() {
-        movies = api.request(new MovieRequest(currentYear));
+        MovieRequest request = new MovieRequest(currentYear);
+        movies = api.request(request.getPopularRequest());
         moviePosterLabel1 = new JLabel();
         moviePosterLabel2 = new JLabel();
         moviePosterLabel3 = new JLabel();

@@ -14,9 +14,6 @@ public class MovieHTTPResponseParser {
             JSONObject movie = (JSONObject) obj;
             movies.add(new Movie(movie));
         }
-        for(Movie movie : movies) {
-            System.out.println(movie);
-        }
     }
 
     public ArrayList<Movie> getMovies() {
