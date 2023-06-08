@@ -14,8 +14,8 @@ public class TMDbAPI {
         this.APIKey = APIKey;
     }
 
-    public ArrayList<Movie> request(MovieRequest request) {
-        String uri = APIURI + request.getRequest();
+    public ArrayList<Movie> request(String request) {
+        String uri = APIURI + request;
         HttpRequest httpRequest = HttpRequest.newBuilder()
             .uri(URI.create(uri))
             .header("accept", "application/json")
